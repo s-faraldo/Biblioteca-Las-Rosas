@@ -2,6 +2,7 @@ public class Libro{
 	// atributos
 	private String codigo;
 	private String nombre;
+	private String titulo;
 	private String tipo;
 	private String fecha;
 	private int paginas;
@@ -12,7 +13,7 @@ public class Libro{
 	}
 
 	// constructor con parametros
-	public Libro(String codigo, String nombre, String tipo, String fecha, int paginas, double costo) {
+	public Libro(String codigo, String nombre, String titulo, String tipo, String fecha, int paginas, double costo) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.tipo = tipo;
@@ -35,6 +36,14 @@ public class Libro{
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getTipo() {

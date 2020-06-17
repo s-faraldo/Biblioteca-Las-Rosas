@@ -79,8 +79,12 @@ public class Main {
 		String titulo = sc.next();
 		System.out.println("Ingrese costo del libro:");
 		double costo = sc.nextDouble();
-		Libro libro = new Libro(codigo, nombre, tipo, fecha, paginas, costo);
-		lasRosas.agregarLibro(libro);
+		Libro libro = new Libro(codigo, nombre, titulo, tipo, fecha, paginas, costo);
+		try{ 
+			lasRosas.agregarLibro(libro);
+		}catch(LibreriallenaExepcion ex){
+			System.out.println("Flaco basta no ves que ta definido pa 10 libos capo.");
+		}
 		nombre = nombre.substring(0,3);
 		codigo = dewey + "-" + nombre + "/" + paginas + "," +tomo;
 		System.out.println(codigo);
