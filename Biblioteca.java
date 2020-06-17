@@ -8,11 +8,12 @@ public class Biblioteca {
     }
 
     public void agregarLibro(Libro libro) throws LibreriallenaExepcion {
-		if (tope==libros.lenght) {
-            throw new LibreriallenaExepcion();
-		}else{		
-            libros[tope]=libro;
-            tope++;}
+		try {
+			libros[tope]=libro; 
+			tope ++;
+		}catch(ArrayIndexOutOfBoundsException ex) {
+			throw new LibreriallenaExepcion();
+		}
 
 		
 	}
