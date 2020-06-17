@@ -1,5 +1,3 @@
-import org.graalvm.compiler.nodes.debug.BlackholeNode;
-
 public class Biblioteca {
     int tope;
     Libro[] libros;

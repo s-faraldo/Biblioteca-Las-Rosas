@@ -3,8 +3,8 @@ public class Libro{
 	private String codigo;
 	private String nombre;
 	private String tipo;
-	private int year;
-	private int num_pag;
+	private String fecha;
+	private int paginas;
 	private double costo;
 
 	// constructor vacio
@@ -12,12 +12,12 @@ public class Libro{
 	}
 
 	// constructor con parametros
-	public Libro(String codigo, String nombre, String tipo, int year, int num_pag, double costo) {
+	public Libro(String codigo, String nombre, String tipo, String fecha, int paginas, double costo) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.tipo = tipo;
-		this.year = year;
-		this.num_pag = num_pag;
+		this.fecha = fecha;
+		this.paginas = paginas;
 		this.costo = costo;
 	}
 
@@ -45,20 +45,20 @@ public class Libro{
 		this.tipo = tipo;
 	}
 
-	public int getYear() {
-		return year;
+	public String getFecha() {
+		return fecha;
 	}
 
-	public void setYear(int year) {
-		this.year = year;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
-	public int getNum_pag() {
-		return num_pag;
+	public int getPaginas() {
+		return paginas;
 	}
 
-	public void setNum_pag(int num_pag) {
-		this.num_pag = num_pag;
+	public void setPaginas(int paginas) {
+		this.paginas = paginas;
 	}
 
 	public double getCosto() {

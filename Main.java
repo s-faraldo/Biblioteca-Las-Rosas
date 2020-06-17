@@ -4,9 +4,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Biblioteca lasRosas = new Biblioteca(10);
 		String dewey ="";
 		String codigo ="";
-		String tipo;
+		String tipo ="";
 		System.out.println("------------------");
 		System.out.println("     Bienvenido   ");
 		System.out.println("------------------");
@@ -77,7 +78,9 @@ public class Main {
 		System.out.println("Ingrese titulo del libro:");
 		String titulo = sc.next();
 		System.out.println("Ingrese costo del libro:");
-		String costo = sc.next();
+		double costo = sc.nextDouble();
+		Libro libro = new Libro(codigo, nombre, tipo, fecha, paginas, costo);
+		lasRosas.agregarLibro(libro);
 		nombre = nombre.substring(0,3);
 		codigo = dewey + "-" + nombre + "/" + paginas + "," +tomo;
 		System.out.println(codigo);
