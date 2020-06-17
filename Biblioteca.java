@@ -7,9 +7,9 @@ public class Biblioteca {
         tope = 0;
     }
 
-    public void agregarLibro(Libro libro) throws LibreriaLlenaException {
+    public void agregarLibro(Libro libro) throws LibreriallenaExepcion {
 		if (tope==libros.lenght) {
-            throw new LibreriaLlenaException();
+            throw new LibreriallenaExepcion();
 		}else{		
             libros[tope]=libro;
             tope++;}
