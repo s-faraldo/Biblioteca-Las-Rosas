@@ -3,7 +3,6 @@ public class Libro{
 	private String codigo;
 	private String nombre;
 	private String tipo;
-	private String clase;
 	private int year;
 	private int num_pag;
 	private double costo;
@@ -13,11 +12,10 @@ public class Libro{
 	}
 
 	// constructor con parametros
-	public Libro(String codigo, String nombre, String tipo, String clase, int year, int num_pag, double costo) {
+	public Libro(String codigo, String nombre, String tipo, int year, int num_pag, double costo) {
 		this.codigo = codigo;
 		this.nombre = nombre;
 		this.tipo = tipo;
-		this.clase = clase;
 		this.year = year;
 		this.num_pag = num_pag;
 		this.costo = costo;
@@ -45,14 +43,6 @@ public class Libro{
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
-	}
-
-	public String getClase() {
-		return clase;
-	}
-
-	public void setClase(String clase) {
-		this.clase = clase;
 	}
 
 	public int getYear() {
