@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		Biblioteca lasRosas = new Biblioteca(1);
+		Biblioteca lasRosas = new Biblioteca(10);
 		String dewey ="";
 		String codigo ="";
 		String tipo ="";
