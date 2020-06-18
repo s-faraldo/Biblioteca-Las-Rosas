@@ -21,7 +21,9 @@ public class Biblioteca {
         System.out.println("---------------------------------");
 		for(int x=0;x<tope;x++) {
 			System.out.printf("Codigo: %s \nNombre: %s \nAutor: %s \nTipo: %s \nFecha: %s \nTomo: %d \nPaginas: %d \nCosto: $%.2f \n",libros[x].getCodigo(), libros[x].getTitulo(),libros[x].getNombre(),libros[x].getTipo(),libros[x].getFecha(),libros[x].getTomo(),libros[x].getPaginas(),libros[x].getCosto());
-        }
+			System.out.println("---------------------------------");
+		}
+		
     }
 
     public boolean controlofecha (String fecha){

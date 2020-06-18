@@ -15,10 +15,15 @@ public class Main {
 		int paginas =0;
 		String nombre ="";
 		String fecha ="";
+		String salida = "";
 		boolean salir = false;
-			System.out.println("------------------");
-			System.out.println("     Bienvenido   ");
-			System.out.println("------------------");
+		boolean seleccion =false;
+		boolean terminar = false;
+		System.out.println("----------------------");
+		System.out.println("       Bienvenido     ");
+		do{
+			salir = false;
+			System.out.println("----------------------");
 			System.out.println("0. Obras Generales");
 			System.out.println("1. Filosofia");
 			System.out.println("2. Religion");
@@ -29,10 +34,10 @@ public class Main {
 			System.out.println("7. Bellas Artes");
 			System.out.println("8. Literatura");
 			System.out.println("9. Historia");
-			System.out.println("------------------");
+			System.out.println("----------------------");
 			while (!salir) {
 			try {
-				System.out.println("Ingrese un numero:");
+				System.out.println("Ingrese un genero:");
 				int coIngresar = sc.nextInt();
 				switch(coIngresar){
 				case 0:
@@ -93,9 +98,9 @@ public class Main {
 				System.out.println("Debes insertar un número");
 				sc.next();
 		
+				}
 			}
-		}
-		sc = new Scanner(System.in);
+			sc = new Scanner(System.in);
 			System.out.println("Ingrese titulo del libro:");
 			titulo = sc.nextLine();
 			System.out.println("Ingrese el autor del libro:");
@@ -138,14 +143,30 @@ public class Main {
 				}
 			}while(!salir);
 
-		String codNombre = nombre.substring(0,3);
-		codigo = dewey + "-" + codNombre + "/" + paginas + "," +tomo;
-		Libro libro = new Libro(codigo, nombre, titulo, tipo, tomo, fecha, paginas, costo);
-		try{ 
-			lasRosas.agregarLibro(libro);
-		}catch(LibreriallenaExepcion ex){
-			System.out.println("Flaco basta no ves que ta definido pa 10 libos capo.");
-		}
+			String codNombre = nombre.substring(0,3);
+			codigo = dewey + "-" + codNombre + "/" + paginas + "," +tomo;
+			Libro libro = new Libro(codigo, nombre, titulo, tipo, tomo, fecha, paginas, costo);
+			try{ 
+				lasRosas.agregarLibro(libro);
+			}catch(LibreriallenaExepcion ex){
+				System.out.println("Flaco basta no ves que ta definido pa 10 libos capo.");
+			}
+			do{ 
+				sc = new Scanner(System.in);
+				System.out.println("Desea ingresar otro libro? [S/N]");
+				salida = sc.nextLine();
+				if (salida.equalsIgnoreCase("N")){
+					terminar = true;
+					seleccion = true;
+				}else if (salida.equalsIgnoreCase("S")){
+					terminar = false;
+					seleccion = true;
+				}else{
+					System.out.println("La opcion elegida no es valida.");
+					seleccion = false;
+				}
+			}while(!seleccion);
+		}while (!terminar);
 		lasRosas.mostrarLibros();
 					
 		
