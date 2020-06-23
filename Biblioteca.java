@@ -8,20 +8,23 @@ public class Biblioteca {
 		almcLibros = new Hashtable<String, Libro>();
     }
 
-    public void agregarLibro(Libro libro) {
-			almcLibros.put(libro.getCodigo(), libro);
-			this.codigo = libro.getCodigo();
+    public void agregarLibro(String codigo, Libro libro) {
+			this.codigo = codigo;
+			almcLibros.put(codigo, libro);
     }
     
     public void mostrarLibros() {
-		Enumeration enu = almcLibros.elements(); 
-        System.out.printf("Cantidad de Libros: %d \n",almcLibros.size());
-        System.out.println("---------------------------------");
-		while (enu.hasMoreElements()) { 
-			System.out.println(enu.nextElement()); 
-			System.out.println(almcLibros.get(codigo));
-			System.out.println("---------------------------------");
-        } 	
+		System.out.printf("Cantidad de Libros: %d \n",almcLibros.size());
+		System.out.println("---------------------------------");
+
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println(keys.nextElement().getNombre());
+			System.out.println(keys.nextElement().getNombre());
+			System.out.println(keys.nextElement().getNombre());
+			System.out.println(keys.nextElement().getNombre());
+			System.out.println(keys.nextElement().getNombre());
+		}
+		System.out.println("---------------------------------");	
     }
 
     public boolean controloFecha (String fecha){

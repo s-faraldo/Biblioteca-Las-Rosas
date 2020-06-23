@@ -146,7 +146,7 @@ public class Main {
 			String codNombre = nombre.substring(0,3);
 			codigo = dewey + "-" + codNombre + "/" + paginas + "," +tomo;
 			Libro libro = new Libro(codigo, nombre, titulo, tipo, tomo, fecha, paginas, costo);
-			lasRosas.agregarLibro(libro);
+			lasRosas.agregarLibro(codigo, libro);
 			do{ 
 				sc = new Scanner(System.in);
 				System.out.println("Desea ingresar otro libro? [S/N]");
