@@ -16,15 +16,19 @@ public class Biblioteca {
     public void mostrarLibros() {
 		System.out.printf("Cantidad de Libros: %d \n",almcLibros.size());
 		System.out.println("---------------------------------");
+		int x =1;
 
 		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
-			System.out.println(keys.nextElement().getNombre());
-			System.out.println(keys.nextElement().getNombre());
-			System.out.println(keys.nextElement().getNombre());
-			System.out.println(keys.nextElement().getNombre());
-			System.out.println(keys.nextElement().getNombre());
+			System.out.println("Codigo Libro " + x + " :" + keys.nextElement().getCodigo());	
+			x ++;
 		}
-		System.out.println("---------------------------------");	
+		x = 1;
+		System.out.println("---------------------------------");
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Autor Libro " + x + " :" + keys.nextElement().getNombre());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
     }
 
     public boolean controloFecha (String fecha){
