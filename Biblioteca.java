@@ -22,6 +22,12 @@ public class Biblioteca {
 			System.out.println("Codigo Libro " + x + " :" + keys.nextElement().getCodigo());	
 			x ++;
 		}
+		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Nombre Libro " + x + " :" + keys.nextElement().getTitulo());	
+			x ++;
+		}
 		x = 1;
 		System.out.println("---------------------------------");
 		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
@@ -29,6 +35,37 @@ public class Biblioteca {
 			x ++;
 		}
 		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Tipo Libro " + x + " :" + keys.nextElement().getTipo());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Tomo Libro " + x + " :" + keys.nextElement().getTomo());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Fecha Libro " + x + " :" + keys.nextElement().getFecha());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Paginas Libro " + x + " :" + keys.nextElement().getPaginas());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
+		x = 1;
+		for (Enumeration <Libro> keys = almcLibros.elements(); keys.hasMoreElements();){ 
+			System.out.println("Costo Libro " + x + " : "+"$"+keys.nextElement().getCosto());	
+			x ++;
+		}
+		System.out.println("---------------------------------");
+		x = 1;
     }
 
     public boolean controloFecha (String fecha){
