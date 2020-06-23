@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		Biblioteca lasRosas = new Biblioteca(10);
+		Biblioteca lasRosas = new Biblioteca();
 		String dewey ="";
 		String codigo ="";
 		String tipo ="";
@@ -108,7 +108,7 @@ public class Main {
 			do{
 				System.out.println("Ingrese la fecha de publicacion del libro: [aaaa-mm-dd]");
 				fecha = sc.nextLine();
-			}while(!lasRosas.controlofecha(fecha));
+			}while(!lasRosas.controloFecha(fecha));
 			do{
 				try {
 					System.out.println("Ingrese el tomo del libro:");
@@ -146,11 +146,7 @@ public class Main {
 			String codNombre = nombre.substring(0,3);
 			codigo = dewey + "-" + codNombre + "/" + paginas + "," +tomo;
 			Libro libro = new Libro(codigo, nombre, titulo, tipo, tomo, fecha, paginas, costo);
-			try{ 
-				lasRosas.agregarLibro(libro);
-			}catch(LibreriallenaExepcion ex){
-				System.out.println("Flaco basta no ves que ta definido pa 10 libos capo.");
-			}
+			lasRosas.agregarLibro(libro);
 			do{ 
 				sc = new Scanner(System.in);
 				System.out.println("Desea ingresar otro libro? [S/N]");

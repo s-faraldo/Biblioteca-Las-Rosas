@@ -1,32 +1,30 @@
-public class Biblioteca {
-    int tope;
-    Libro[] libros;
+import java.util.*; 
 
-    public Biblioteca(int cantidadLibros){
-        libros = new Libro[cantidadLibros];
-        tope = 0;
+public class Biblioteca {
+	private Hashtable<String, Libro> almcLibros;
+	private String codigo;
+
+    public Biblioteca(){
+		almcLibros = new Hashtable<String, Libro>();
     }
 
-    public void agregarLibro(Libro libro) throws LibreriallenaExepcion {
-		try {
-			libros[tope]=libro; 
-			tope ++;
-		}catch(ArrayIndexOutOfBoundsException ex) {
-			throw new LibreriallenaExepcion();
-		}
+    public void agregarLibro(Libro libro) {
+			almcLibros.put(libro.getCodigo(), libro);
+			this.codigo = libro.getCodigo();
     }
     
     public void mostrarLibros() {
-        System.out.printf("Cantidad de Libros: %d \n",tope);
+		Enumeration enu = almcLibros.elements(); 
+        System.out.printf("Cantidad de Libros: %d \n",almcLibros.size());
         System.out.println("---------------------------------");
-		for(int x=0;x<tope;x++) {
-			System.out.printf("Codigo: %s \nNombre: %s \nAutor: %s \nTipo: %s \nFecha: %s \nTomo: %d \nPaginas: %d \nCosto: $%.2f \n",libros[x].getCodigo(), libros[x].getTitulo(),libros[x].getNombre(),libros[x].getTipo(),libros[x].getFecha(),libros[x].getTomo(),libros[x].getPaginas(),libros[x].getCosto());
+		while (enu.hasMoreElements()) { 
+			System.out.println(enu.nextElement()); 
+			System.out.println(almcLibros.get(codigo));
 			System.out.println("---------------------------------");
-		}
-		
+        } 	
     }
 
-    public boolean controlofecha (String fecha){
+    public boolean controloFecha (String fecha){
 		boolean a = false;  
 			if(fecha.length()!= 10){
 				  System.out.println("Debe ingresar la fecha correctamente. ");
